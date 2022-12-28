@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>LATIHAN SUB BAB 1</h1>
+    <label for="">Nama</label><br>
+    <input type="text" id="nama"><br>
+    <label for="">No Absen</label><br>
+    <input type="number"id ="absen"><br>
+    <label for ="">Nilai :</label><div id ="nilai"></div>
+    <hr>
+    <h4>Pilihan Ganda</h4>
+    <!-- soal nomer 1 -->
+    <label for="">1. Hasil dari 39.700 + 63.799 - 49.999 = ....</label><br>
+    <input type="radio" name="no1" id = "jno1">53500<br>
+    <input type="radio" name="no1"> 10500<br>
+    <input type="radio" name="no1"> 14500<br>
+    <input type="radio" name="no1"> 20000<br>
+    <div id="rno1"></div>
+
+    <!-- soal nomer 2 -->
+    <label for="">2. Hasil hitung dari 603 + 85 x 28 adalah .... = ....</label><br>
+    <input type="radio" name="no2">43500<br>
+    <input type="radio" name="no2"> 60500<br>
+    <input type="radio" name="no2" id = "jno2"> 19264<br>
+    <input type="radio" name="no2"> 33000<br>
+    <div id="rno2"></div>
+
+    <button onclick="kirim()">kirim</button>
+
+    <script>
+        function kirim(){
+            const jno1 = document.querySelector('#jno1')
+            const jno2 = document.querySelector('#jno2')
+
+            const rno1 = document.querySelector('#rno1')
+            const rno2 = document.querySelector('#rno2')
+            const nilai = document.querySelector('#nilai')
+
+
+            let response
+            let poin = 0
+            if(jno1.checked){
+                response = 'jawaban kamu benar'
+                rno1.style = 'color :green;'
+                poin = poin + 10
+            }else{
+                response = 'jawaban kamu salah'
+                rno1.style = 'color : red;'
+            }
+            rno1.innerHTML = response
+
+            if(jno2.checked){
+                response = 'jawaban kamu benar'
+                rno2.style = 'color :green;'
+                poin = poin + 10
+            }else{
+                response = 'jawaban kamu salah'
+                rno2.style = 'color : red;'
+            }
+            rno2.innerHTML = response
+
+            nilai.innerHTML = poin
+
+
+ 
+        }
+            
+    </script>
+    <p><a href="home.html"class="">kembali ke HOME</a></p>
+
+</body>
+</html>
